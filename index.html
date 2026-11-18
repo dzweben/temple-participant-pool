@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temple Participant Pool</title>
+    <link rel="stylesheet" href="./styles.css?v=1795031184" />
+  </head>
+  <body>
+    <main class="kiosk">
+      <section class="card screen-center" id="screen-welcome">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">Temple University Brain Research Imaging Center</div>
+          </div>
+        </header>
+
+        <h1>Welcome to the Temple Participant Pool</h1>
+        <div class="intro">
+          <p class="lead">If you are interested in being contacted about future studies, we can add you to the participant pool database. Once you&rsquo;re in the database, you&rsquo;ll receive a monthly email newsletter that will keep you up to date on all the new research opportunities at Temple. You will also be eligible to be contacted by labs who are interested in your participation. Your information will only be accessible to research labs in Temple or affiliated universities such as Drexel.</p>
+          <p class="lead intro-question">Would you like to be added to the participant pool database?</p>
+        </div>
+        <div class="actions">
+          <button class="btn primary" data-next="screen-signin">Yes, add me</button>
+          <button class="btn secondary" data-next="screen-no-checkin">No, thank you</button>
+        </div>
+        <p class="muted small">Participants must be 18 or older.</p>
+      </section>
+
+      <section class="card hidden" id="screen-signin">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">Sign In</div>
+          </div>
+        </header>
+        <h1>Sign In</h1>
+        <p class="muted">
+          Please enter your full legal name and date of birth exactly as you did on previous visits.
+          Participants must be 18 or older.
+        </p>
+
+        <form class="form" id="info-form" autocomplete="off">
+          <label>
+            Legal First Name <span class="hint">(as on previous visits)</span>
+            <input type="text" id="firstName" autocomplete="off" />
+          </label>
+          <label>
+            Middle Name <span class="hint">(optional)</span>
+            <input type="text" id="middleName" autocomplete="off" />
+          </label>
+          <label>
+            Legal Last Name <span class="hint">(as on previous visits)</span>
+            <input type="text" id="lastName" autocomplete="off" />
+          </label>
+          <label>
+            Date of Birth <span class="hint">(MM-DD-YYYY)</span>
+            <input type="text" id="dob" inputmode="numeric" autocomplete="off" />
+          </label>
+          <label>
+            Email Address
+            <input type="email" id="email" autocomplete="off" />
+          </label>
+          <label>
+            Phone Number <span class="hint">(555-555-5555)</span>
+            <input type="tel" id="phone" inputmode="numeric" autocomplete="off" />
+          </label>
+        </form>
+
+        <div class="error" id="info-error"></div>
+
+        <div class="actions sticky-actions">
+          <button class="btn primary" id="info-continue">Continue</button>
+          <button class="btn ghost" data-back>← Back</button>
+        </div>
+      </section>
+
+      <section class="card screen-center hidden" id="screen-under18">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">Adults Only</div>
+          </div>
+        </header>
+        <h1>The participant pool is open to adults 18 and older.</h1>
+        <p class="lead">Thank you for your interest. You do not need to check in today.</p>
+        <p class="muted">Nothing has been saved. Please let the research assistant know.</p>
+        <div class="actions">
+          <button class="btn primary" id="under18-done">Done</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="screen-about">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">About You</div>
+          </div>
+        </header>
+        <h1>About you</h1>
+        <p class="muted">A few questions we ask once, when you first join the pool.</p>
+
+        <div class="form about-form">
+          <div class="field">
+            <span>Sex</span>
+            <div class="choice-row choice-group" data-field="sex" role="radiogroup" aria-label="Sex">
+              <button type="button" class="choice" data-value="1">Male</button>
+              <button type="button" class="choice" data-value="2">Female</button>
+              <button type="button" class="choice" data-value="3">Other</button>
+            </div>
+          </div>
+          <label>
+            Birth City / Municipality
+            <input type="text" id="birthCity" autocomplete="off" />
+          </label>
+          <div class="field">
+            <span>Race</span>
+            <div class="choice-list choice-group" data-field="race" role="radiogroup" aria-label="Race">
+              <button type="button" class="choice" data-value="0">American Indian/Alaska Native</button>
+              <button type="button" class="choice" data-value="1">Asian</button>
+              <button type="button" class="choice" data-value="2">Native Hawaiian or Pacific Islander</button>
+              <button type="button" class="choice" data-value="3">Black or African American</button>
+              <button type="button" class="choice" data-value="4">White</button>
+              <button type="button" class="choice" data-value="5">Two or more races, or race not described (other)</button>
+              <button type="button" class="choice" data-value="6">Prefer not to respond</button>
+            </div>
+          </div>
+          <div class="field">
+            <span>Ethnicity</span>
+            <div class="choice-list choice-group" data-field="ethnicity" role="radiogroup" aria-label="Ethnicity">
+              <button type="button" class="choice" data-value="0">Hispanic or Latino</button>
+              <button type="button" class="choice" data-value="1">Not Hispanic or Latino</button>
+              <button type="button" class="choice" data-value="2">Ethnicity not described (Other)</button>
+              <button type="button" class="choice" data-value="3">Prefer not to respond</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="error" id="about-error"></div>
+
+        <div class="actions sticky-actions">
+          <button class="btn primary" id="about-continue">Continue</button>
+          <button class="btn ghost" data-back>← Back</button>
+        </div>
+      </section>
+
+      <section class="card consent hidden" id="screen-consent">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">Research Subject Consent Form</div>
+          </div>
+        </header>
+        <h1>Join the participant pool</h1>
+        <p class="muted">Please read the IRB-approved consent form below, then print your name and choose.</p>
+
+        <div class="consent-doc" id="consent-doc">
+          <iframe
+            id="consent-pdf"
+            title="Research Subject Consent Form, Protocol 31285"
+            src="./consent/31285_consent_03252024.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+          ></iframe>
+        </div>
+        <p class="muted small">Scroll inside the document to read all pages of the consent form.</p>
+
+        <div class="consent-sign">
+          <div class="form">
+            <label>
+              Printed name
+              <input type="text" id="consentName" autocomplete="off" />
+            </label>
+            <label>
+              Date
+              <input type="text" id="consentDate" readonly />
+            </label>
+          </div>
+        </div>
+        <div class="error" id="consent-error"></div>
+
+        <div class="actions sticky-actions">
+          <button class="btn primary" id="consent-accept">I accept and Sign</button>
+          <button class="btn secondary" id="consent-decline">I do not agree</button>
+          <button class="btn ghost" data-back>← Back</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="screen-study">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">Today's Visit</div>
+          </div>
+        </header>
+        <h1>Study Code</h1>
+        <p class="muted">Please have the research assistant fill in this information.</p>
+        <input class="study-input" type="text" id="studyCode" autocomplete="off" />
+        <div class="error" id="study-error"></div>
+        <div class="actions">
+          <button class="btn primary" id="finish">Finish Check-In</button>
+          <button class="btn ghost" data-back>← Back</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="screen-done">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">All Set</div>
+          </div>
+        </header>
+        <h1>You're all set.</h1>
+        <p class="lead">Thank you for checking in.</p>
+        <p class="muted">Please let the research assistant know you have completed the check-in process.</p>
+        <div class="actions">
+          <button class="btn primary" id="done">Done</button>
+        </div>
+      </section>
+
+      <section class="card screen-center hidden" id="screen-no-checkin">
+        <header class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="kicker">TEMPLE PARTICIPANT POOL</div>
+            <div class="kicker-sub">No Action Needed</div>
+          </div>
+        </header>
+        <h1>You do not have to check in.</h1>
+        <p class="lead">Thank you for your time today. Nothing has been saved.</p>
+        <div class="actions">
+          <button class="btn primary" id="no-checkin-done">Done</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./demo-backend.js?v=1795031184"></script>
+    <script src="./renderer.js?v=1795031184"></script>
+  </body>
+</html>
